@@ -1,0 +1,67 @@
+---
+title: "Explanation of Package"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Explanation of Package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753KESKEWFA23)
+```
+
+## Introduction
+
+This is a package comprised of functions and data  for MATH4753 in the Fall 2023 semester. This package represents a small selection of functions and data used throughout the term, generally chosen for inclusion at the discretion of the creator.
+
+# Fire - Data
+
+This is the data set used in Project 2. It relates the distance from a fire station to the damage caused by a residential fire. It is a small set of data helpful for learning linear regression.
+
+# mybin
+
+mybin() creates barplot from a binomial simulation for a given number of iterations and trials. The probability of success in each trial must also be specified.
+
+```{r}
+mybin(100,10,.5)
+```
+
+# myci
+
+myci() creates a 95% confidence interval using qt() and a specified set of data.
+
+```{r}
+myci(rnorm(30,mean=10,sd=12))
+```
+
+# myclt
+
+myclt() takes input information on a sample and then a specified lower and upper bounds with defaults of 0 and 5, respectively, to create a histogram of the sum of samples.
+
+```{r}
+myclt(10,1000)
+```
+
+# myncurve
+
+myncurve() requires a mean and standard deviation as well as an upper bound as inputs. In turn, it produces a normal curve and calculates and shades in the probability of a value being between 0 and the specified upper bound.
+
+```{r}
+myncurve(10,5,6)
+```
+
+#ntickets
+
+This function was created for project 1's airline overbooking problem. Accepting arguments regarding the seats on the aircraft, desired probability of overbooking, and the probability that a ticketed passenger boards, it finds the optimal number of tickets to sell.
+
+```{r}
+ntickets(200,.02,.95)
+```
